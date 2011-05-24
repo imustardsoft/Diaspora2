@@ -1,0 +1,33 @@
+#   Copyright (c) 2010, Diaspora Inc.  This file is
+#   licensed under the Affero General Public License version 3 or later.  See
+#   the COPYRIGHT file.
+
+
+gl: 
+  javascripts: 
+    confirm_dialog: "Está seguro?"
+    publisher: 
+      at_least_one_aspect: "Ten que publicalo polo menos nun aspecto."
+    search_for: "Buscar a {{name}}"
+    shared: 
+      contact_list: 
+        cannot_remove: "Non pode quitar esta persoa do aspecto. Se non quere seguir compartindo con ela, elimínea como contacto."
+    timeago: 
+      day: "un día"
+      days: "%d días"
+      hour: "arredor dunha hora"
+      hours: "arredor de %d horas"
+      minute: "arredor dun minuto"
+      minutes: "%d minutos"
+      month: "arredor dun mes"
+      months: "%d meses"
+      prefixAgo: "Hai"
+      prefixFromNow: ""
+      seconds: "menos dun minuto"
+      suffixAgo: ""
+      suffixFromNow: "dende agora"
+      year: "sobre un ano"
+      years: "%d anos"
+    videos: 
+      unknown: "Tipo de vídeo descoñecido"
+      watch: "Ver o vídeo en {{provider}}"

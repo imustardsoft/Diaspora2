@@ -1,0 +1,37 @@
+-#   Copyright (c) 2010, Diaspora Inc.  This file is
+-#   licensed under the Affero General Public License version 3 or later.  See
+-#   the COPYRIGHT file.
+
+
+= content_for :head do
+  :css
+    header{ display:none; }
+
+    #getting_started_logo.start{
+      -webkit-animation-name: fadeUp;
+      -webkit-animation-delay: 0s;
+      -webkit-animation-duration: 0.35s;
+    }
+
+    @media only screen {
+        #getting_started_logo { -webkit-transform: translateZ(0); }
+    }
+    @-webkit-keyframes fadeUp {
+        0% { opacity: 0; -webkit-transform: translate3d(0, 40px, 0); -webkit-animation-timing-function: ease-out; }
+        70% { opacity: 0; -webkit-transform: translate3d(0, 35px, 0); }
+        100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); -webkit-animation-timing-function: ease-out; }
+    }
+
+.span-15.prepend-4.last{:style => 'position:relative;'}
+  = image_tag 'logo_caps.png', :id => 'getting_started_logo', :width => 143, :height => 21, :class => ('start' if @step == 1)
+  %br
+  %br
+  .floating{:style=>"min-height:300px;"}
+    = render "users/getting_started/step_#{@step}", :current_user => current_user
+
+    - if @step > 1
+      = link_to t('back'), getting_started_path(:step => @step-1), :class => "button", :id => "previous_step"
+
+- if @user.getting_started
+  .bottom_notification
+    = link_to "#{t('.skip')} →", getting_started_completed_path

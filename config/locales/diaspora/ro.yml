@@ -1,0 +1,631 @@
+#   Copyright (c) 2011, Diaspora Inc.  This file is
+#   licensed under the Affero General Public License version 3 or later.  See
+#   the COPYRIGHT file.
+
+
+ro: 
+  _comments: "Comentarii"
+  _home: "Acasă"
+  _photos: "Fotografii"
+  _services: "Servicii"
+  account: "Cont"
+  activerecord: 
+    errors: 
+      models: 
+        contact: 
+          attributes: 
+            person_id: 
+              taken: "must be unique among this user's contacts."
+        person: 
+          attributes: 
+            diaspora_handle: 
+              taken: "is already taken."
+        request: 
+          attributes: 
+            from_id: 
+              taken: "is a duplicate of a pre-existing request."
+        user: 
+          attributes: 
+            email: 
+              taken: "is already taken."
+            person: 
+              invalid: "is invalid."
+            username: 
+              taken: "is already taken."
+  ago: "%{time} ago"
+  all_aspects: "All aspects"
+  application: 
+    helper: 
+      diaspora_alpha: "DIASPORA* ALPHA"
+      unknown_person: "persoană necunoscută"
+      video_title: 
+        unknown: "Unknown Video Title"
+  are_you_sure: "Eşti sigur?"
+  aspect_memberships: 
+    aspect_dropdown: 
+      add_to_aspect: "Add to aspect"
+      toggle: 
+        few: "In %{count} aspects"
+        many: "In %{count} aspects"
+        one: "In %{count} aspect"
+        other: "In %{count} aspects"
+        zero: "Add to aspect"
+    destroy: 
+      failure: "Failed to remove person from aspect"
+      no_membership: "Could not find the selected person in that aspect"
+      success: "Successfully removed person from aspect"
+  aspects: 
+    add_to_aspect: 
+      failure: "Nu s-a reuşit adăuga contactul la aspect."
+      success: "Contactul a fost adăugat cu succes la aspect."
+    aspect_contacts: 
+      done_editing: "terminat de editat"
+    aspect_stream: 
+      activity: "activitate"
+      post_time: "post time"
+      sort_by: "sort by:"
+    contacts_not_visible: "Contacts in this aspect will not be able to see each other."
+    contacts_visible: "Contacts in this aspect will be able to see each other."
+    create: 
+      failure: "Crearea aspectului a eşuat."
+      success: "S-a creat noul aspect %{name}"
+    destroy: 
+      failure: "%{name} is not empty and could not be removed."
+      success: "%{name} a fost eliminat cu succes."
+    edit: 
+      add_existing: "Adaugă o persoană de contact existentă"
+      aspect_list_is_not_visible: "aspect list is hidden to others in aspect"
+      aspect_list_is_visible: "aspect list is visible to others in aspect"
+      confirm_remove_aspect: "Eşti sigur că doreşti să ştergi acest aspect?"
+      done: "Done"
+      make_aspect_list_visible: "make aspect list visible?"
+      remove_aspect: "Delete this aspect"
+      rename: "rename"
+      update: "update"
+      updating: "updating"
+    few: "%{count} aspects"
+    helper: 
+      are_you_sure: "Eşti sigur că doreşti să ştergi acest aspect?"
+      aspect_not_empty: "Aspectul nu este gol"
+      remove: "şterge"
+    index: 
+      handle_explanation: "This is your diaspora handle.  Like an email address, you can give this to people to reach you."
+      no_contacts: "No contacts"
+      people_sharing_with_you: "People sharing with you"
+      post_a_message: "post a message >>"
+    manage: 
+      add_a_new_aspect: "Adaugă un nou aspect"
+      add_a_new_contact: "Adaugă un contact nou"
+      drag_to_add: "Glisaţi pentru a adăuga persoane"
+      manage_aspects: "Gestionează aspectele"
+      no_requests: "Nici o cerere nouă"
+      requests: "Cereri"
+    many: "%{count} aspects"
+    move_contact: 
+      error: "Error moving contact: %{inspect}"
+      failure: "didn't work %{inspect}"
+      success: "S-a mutat persoana la noul aspect"
+    new: 
+      create: "Create"
+      name: "Name"
+    no_posts_message: 
+      start_talking: "Nimeni nu a spus nimic deocamdată. Începe tu o conversaţie!"
+    one: "1 aspect"
+    other: "%{count} aspects"
+    seed: 
+      family: "Familie"
+      work: "Lucru"
+    show: 
+      edit_aspect: "Editează aspect"
+    update: 
+      failure: "Your aspect, %{name}, had too long name to be saved."
+      success: "Aspectul, %{name}, a fost editat cu succes."
+    zero: "no aspects"
+  back: "Înapoi"
+  bookmarklet: 
+    explanation: "%{link} from anywhere by bookmarking this link."
+    explanation_link_text: "Post to Diaspora"
+    post_something: "Post something to Diaspora"
+    post_success: "Posted! Closing!"
+  cancel: "Anulează"
+  comments: 
+    few: "%{count} comments"
+    many: "%{count} comments"
+    new_comment: 
+      comment: "Comentariu"
+      commenting: "Comentând..."
+    one: "1 comment"
+    other: "%{count} comments"
+    zero: "no comments"
+  contacts: 
+    create: 
+      failure: "Failed to create contact"
+    few: "%{count} contacts"
+    many: "%{count} contacts"
+    one: "1 contact"
+    other: "%{count} contacte"
+    sharing: 
+      people_sharing: "People sharing with you:"
+    zero: "nici un contact"
+  conversations: 
+    create: 
+      sent: "Message sent"
+    destroy: 
+      success: "Conversation successfully removed"
+    helper: 
+      new_messages: 
+        few: "%{count} new messages"
+        many: "%{count} new messages"
+        one: "1 new messages"
+        other: "%{count} new messages"
+        zero: "no new messages"
+    index: 
+      create_a_new_message: "create a new message"
+      inbox: "Inbox"
+      message_inbox: "Message Inbox"
+      new_message: "New Message"
+      no_conversation_selected: "no conversation selected"
+      no_messages: "no messages"
+    new: 
+      send: "Send"
+      subject: "subject"
+      to: "to"
+    show: 
+      delete: "delete and block conversation"
+      reply: "reply"
+  date: 
+    formats: 
+      birthday: "%B %d"
+      birthday_with_year: "%B %d %Y"
+      fullmonth_day: "%B %d"
+  delete: "Şterge"
+  email: "E-mail"
+  error_messages: 
+    helper: 
+      correct_the_following_errors_and_try_again: "Corectaţi următoarele erori şi încercaţi din nou."
+      invalid_fields: "Câmpuri invalide"
+  fill_me_out: "Umple-mă"
+  hide: "Hide"
+  home: 
+    show: 
+      already_account: "already have an account?"
+      choice: "Alegere"
+      choice_explanation: "Diaspora allows you to sort your connections into groups called Aspects. Unique to Diaspora, Aspects ensure your photos, stories and jokes are shared with only the people you want them to be."
+      learn_about_host: "Learn about how to host your own Diaspora server"
+      login_here: "log in here"
+      ownership: "Proprietate"
+      ownership_explanation: "You own your pictures, and you shouldn’t have to give that up just in order to share them. You maintain ownership of everything you share on Diaspora, giving you full control over how it is distributed."
+      share_what_you_want: "Share what you want, with whom you want."
+      simplicity: "Simplitate"
+      simplicity_explanation: "Diaspora makes sharing clean and easy – this goes doubly so for privacy. Innherently private, Diaspora doesn’t have pages of settings and options to wade through to keep your profile secure and to your liking."
+      tagline_first_half: "Share what you want,"
+      tagline_second_half: "with whom you want."
+  invitations: 
+    check_token: 
+      not_found: "Invitaţia nu a fost găsită"
+    create: 
+      already_contacts: "Eşti deja conectat cu această persoană"
+      already_sent: "Ai invitat deja această persoană."
+      no_more: "Nu mai dispui de invitaţii."
+      own_address: "You can't send an invitation to your own address."
+      rejected: "The following email addresses had problems: "
+      sent: "Invitaţia dvs. a fost trimisă."
+    edit: 
+      sign_up: "sign_up"
+    new: 
+      already_invited: "Deja invitat "
+      aspect: "Aspect"
+      comma_seperated_plz: "You can enter multiple email addresses separated by commas."
+      if_they_accept_info: "în cazul în care acceptă, vor fi adăugate la aspectul la care le-ai invitat."
+      invite_someone_to_join: "Invită pe cineva pe Diaspora!"
+      personal_message: "Mesaj personal"
+      resend: "Resend"
+      send_an_invitation: "Trimite o invitaţie"
+      send_invitation: "Trimite invitaţie"
+      to: "Pentru"
+  layouts: 
+    application: 
+      have_a_problem: "Ai o problemă? Găseşte un răspuns aici"
+      powered_by: "POWERED BY DIASPORA*"
+      public_feed: "Public Diaspora Feed for %{name}"
+      toggle: "toggle mobile site"
+      whats_new: "ce mai e nou?"
+      your_aspects: "aspectele tale"
+    header: 
+      admin: "admin"
+      blog: "blog"
+      code: "codul"
+      login: "login"
+      logout: "Ieşire"
+      profile: "profile"
+      settings: "settings"
+  likes: 
+    likes: 
+      people_dislike_this: 
+        few: "%{count} people disliked this"
+        many: "%{count} people disliked this"
+        one: "1 person disliked this"
+        other: "%{count} people disliked this"
+        zero: "no people disliked this"
+      people_like_this: 
+        few: "%{count} people liked this"
+        many: "%{count} people liked this"
+        one: "1 person liked this"
+        other: "%{count} people liked this"
+        zero: "no people liked this"
+  more: "Mai mult"
+  next: "următorul"
+  no_results: "No Results Found"
+  notifications: 
+    also_commented: "also commented on"
+    also_commented_deleted: "commented on a deleted post"
+    comment_on_post: "commented on your"
+    deleted: "eliminat"
+    helper: 
+      new_notifications: 
+        few: "%{count} new notifications"
+        many: "%{count} new notifications"
+        one: "1 new notifications"
+        other: "%{count} new notifications"
+        zero: "no new notifications"
+    index: 
+      and: "and"
+      and_others: "and %{number} others"
+      mark_all_as_read: "Marchează-le pe toate ca citite"
+      notifications: "Notificări"
+    liked: "has just liked your post"
+    liked_post_deleted: "liked your deleted post."
+    mentioned: "has mentioned you in their"
+    new_request: "offered to share with you."
+    post: "post"
+    private_message: "sent you a message."
+    started_sharing: "started sharing with you."
+  notifier: 
+    also_commented: 
+      commented: "has also commented on %{post_author}'s post:"
+      sign_in: "Sign in to view it."
+      subject: "%{name} has also commented."
+    comment_on_post: 
+      commented: "has commented on your post!"
+      sign_in: "Sign in to view it."
+      subject: "%{name} has commented on your post."
+    diaspora: "robotul e-mail Diaspora"
+    hello: "Bună %{name}!"
+    liked: 
+      liked: "%{name} has just liked your post: "
+      sign_in: "Sign to view it"
+      subject: "%{name} has just liked your post"
+    love: "cu dragoste,"
+    manage_your_email_settings: "manage your email settings"
+    mentioned: 
+      mentioned: "te-a menţionat întrun post:  "
+      sign_in: "Sign in to view it."
+      subject: "%{name} te-a menţionat pe Diaspora*"
+    private_message: 
+      message_subject: "Subject: %{subject}"
+      private_message: "has sent you a private message:"
+      sign_in: "Sign in to view it."
+      subject: "%{name} has sent you a private message yon Diaspora*"
+    single_admin: 
+      admin: "Your Diaspora administrator"
+      subject: "A message from your Diaspora administrator:"
+    started_sharing: 
+      sharing: "has started sharing with you!"
+      sign_in: "Sign in here"
+      subject: "%{name} has started sharing with you on Diaspora*"
+    thanks: "Mulţumim,"
+  ok: "OK"
+  or: "sau"
+  password: "Parola"
+  password_confirmation: "Confirmă parola"
+  people: 
+    add_contact_small: 
+      add_contact_from_tag: "add contact from tag"
+    aspect_list: 
+      edit_membership: "edit aspect membership"
+    few: "%{count} people"
+    helper: 
+      people_on_pod_are_aware_of: " people on pod are aware of"
+      results_for: "rezultate pentru %{params}"
+    index: 
+      couldnt_find_them_send_invite: "Couldn't find them?  Send an invite!"
+      no_one_found: "...nimeni nu a fost găsit."
+      no_results: "Hey! You need to search for something."
+      results_for: "caută rezultate pentru"
+    many: "%{count} people"
+    one: "1 person"
+    other: "%{count} people"
+    person: 
+      add_contact: "adaugă contact"
+      already_connected: "Eşti deja conectat"
+      pending_request: "cerere în aşteptare"
+      thats_you: "eşti tu!"
+    profile_sidebar: 
+      bio: "biografie"
+      born: "Zi de naştere"
+      edit_my_profile: "Editează profilul meu"
+      gender: "gen"
+      in_aspects: "în aspecte"
+      location: "location"
+      remove_contact: "Elimină contactul"
+      remove_from: "Elimini pe %{name} din %{aspect}?"
+    show: 
+      add_some: "add some"
+      does_not_exist: "Persoana nu există!"
+      edit: "edit"
+      incoming_request: "You have an incoming request from this person."
+      mention: "Mention"
+      message: "Message"
+      no_posts: "nici un post disponibil!"
+      not_connected: "You are not connected with this person"
+      recent_posts: "Recent Posts"
+      recent_public_posts: "Recent Public Posts"
+      return_to_aspects: "Return to your aspects page"
+      see_all: "See all"
+      start_sharing: "start sharing"
+      to_accept_or_ignore: "to accept or ignore it."
+      you_have_no_tags: "you have no tags!"
+    webfinger: 
+      fail: "Sorry, we couldn't find %{handle}."
+    zero: "no people"
+  photos: 
+    create: 
+      integrity_error: "Încărcarea fotografiei a eşuat. Eşti sigur că a fost o imagine?"
+      runtime_error: "Încărcarea fotografiei a eşuat. Eşti sigur că ai centura de siguranţă pusă?"
+      type_error: "Photo upload failed.  Are you sure an image was added?"
+    destroy: 
+      notice: "Fotografie eliminată."
+    edit: 
+      editing: "Modificare"
+    new: 
+      back_to_list: "Înapoi la Listă"
+      new_photo: "Nouă Fotografie"
+      post_it: "postează!"
+    new_photo: 
+      empty: "{file} is empty, please select files again without it."
+      invalid_ext: "{file} has invalid extension. Only {extensions} are allowed."
+      size_error: "{file} is too large, maximum file size is {sizeLimit}."
+    new_profile_photo: 
+      or_select_one: "sau selectaţi una din cele existente in albumul"
+      upload: "Încarcă o fotografie de profil nouă!"
+    photo: 
+      view_all: "vizualizează toate fotografiile lui %{name}"
+    show: 
+      collection_permalink: "collection permalink"
+      delete_photo: "Șterge Fotografie"
+      edit: "editează "
+      edit_delete_photo: "Edit photo description / delete photo"
+      make_profile_photo: "Setează ca fotografie de profil"
+      original_post: "Original Post"
+      permalink: "permalink"
+      update_photo: "Actualizează fotografia"
+      view: "vizualizează"
+    update: 
+      error: "Nu s-a reuşit editarea fotografiii."
+      notice: "Fotografia a fost actualizată cu succes."
+  post_visibilites: 
+    update: 
+      post_hidden: "%{name}'s post has been hidden."
+  posts: 
+    doesnt_exist: "that post does not exist!"
+  previous: "anterioare"
+  profile: "Profil"
+  profiles: 
+    edit: 
+      allow_search: "Allow for people to search for you within Diaspora"
+      edit_profile: "Editează profil"
+      first_name: "First name"
+      last_name: "Last name"
+      update_profile: "Update Profile"
+      your_bio: "Your bio"
+      your_birthday: "Ziua ta de naştere"
+      your_gender: "Your gender"
+      your_location: "Your location"
+      your_name: "Numele tău "
+      your_photo: "Poza ta"
+      your_private_profile: "Your private profile"
+      your_public_profile: "Your public profile"
+      your_tags: "You: in 5 #tags"
+      your_tags_placeholder: "i.e. #diaspora #ironing #kittens #music"
+    update: 
+      failed: "Failed to update profile"
+      updated: "Profil updatat"
+  registrations: 
+    closed: "Signups are closed on this Diaspora pod."
+    create: 
+      success: "Bun venit pe Diaspora!"
+    edit: 
+      cancel_my_account: "Anulează contul meu"
+      edit: "Editează %{name}"
+      leave_blank: "(lăsaţi necompletat dacă nu doriţi să o schimbaţi)"
+      password_to_confirm: "(avem nevoie de parola curentă pentru a confirma modificările)"
+      unhappy: "Nefericit?"
+      update: "Actualizează"
+    new: 
+      enter_email: "Enter an e-mail"
+      enter_password: "Introdu o parolă"
+      enter_password_again: "Introduce aceeaşi parolă ca şi înainte"
+      enter_username: "Pick a username (only letters, numbers, and underscores)"
+      sign_up: "Înregistrare"
+      sign_up_for_diaspora: "Înscrie-te pe Diaspora"
+  requests: 
+    create: 
+      sending: "Sending..."
+      sent: "You've asked to share with %{name}.  They should see it next time they log in to Diaspora."
+    destroy: 
+      error: "Vă rugăm să selectaţi un aspect!"
+      ignore: "Ignorează cererea de contact."
+      success: "Acum sunteţi prieteni."
+    helper: 
+      new_requests: 
+        few: "%{count} new requests!"
+        many: "%{count} new requests!"
+        one: "new request!"
+        other: "%{count} new requests!"
+        zero: "no new requests"
+    manage_aspect_contacts: 
+      existing: "Contactele existente"
+      manage_within: "Manage contacts within"
+    new_request_to_person: 
+      sent: "trimis!"
+  search: "Caută"
+  services: 
+    create: 
+      success: "Autentificare cu succes."
+    destroy: 
+      success: "Successfully destroyed authentication."
+    failure: 
+      error: "there was an error connecting that service"
+    finder: 
+      friends: 
+        few: "%{count} prieteni"
+        many: "%{count} friends"
+        one: "1 prieten"
+        other: "%{count} prieteni"
+        zero: "nici un prieten"
+      invite_your_friends_from: "Invite your friends from %{service}"
+      not_connected: "nu este conectat"
+    index: 
+      connect_to_facebook: "Conectează cu Facebook"
+      connect_to_twitter: "Conectează cu Twitter"
+      disconnect: "desconectează"
+      edit_services: "Edit services"
+      logged_in_as: "conectat ca"
+      really_disconnect: "desconectează %{service}?"
+    inviter: 
+      click_link_to_accept_invitation: "Click pe acest link pentru a accepta invitaţia"
+      join_me_on_diaspora: "Join me on DIASPORA*"
+    remote_friend: 
+      invite: "invite"
+      resend: "resend"
+  settings: "Setări"
+  shared: 
+    add_contact: 
+      create_request: "Find by Diaspora handle"
+      diaspora_handle: "Diaspora handle"
+      enter_a_diaspora_username: "Enter a Diaspora username:"
+      know_email: "Know their email address? You should invite them"
+      your_diaspora_username_is: "Your Diaspora username is: %{diaspora_handle}"
+    contact_list: 
+      all_contacts: "Toate contactele"
+    footer: 
+      logged_in_as: "logged in as %{name}"
+      your_aspects: "your aspects"
+    invitations: 
+      by_email: "prin e-mail"
+      dont_have_now: "You don't have any right now, but more invites are coming soon!"
+      from_facebook: "De pe Facebook"
+      invitations_left: "(%{count} rămase)"
+      invite_someone: "Invită pe cineva"
+      invite_your_friends: "Invită-ţi prietenii"
+      invites: "Invitaţii "
+      invites_closed: "Invites are currently closed on this Diaspora seed"
+    notification: 
+      new: "New %{type} from %{from}"
+    public_explain: 
+      logged_in: "autentificat pe %{service}"
+      manage: "gestionează serviciile la care eşti conectat"
+      outside: "Mesajele publice vor fi disponibile pentru cei ce nu fac parte din Diaspora."
+      title: "Sunteţi pe cale de a publica un mesaj public!"
+    publisher: 
+      add_photos: "adaugă fotografii"
+      all: "toate"
+      all_contacts: "toate contactele"
+      click_to_share_with: "Click to share with: "
+      make_public: "make public"
+      post_a_message_to: "Post a message to %{aspect}"
+      posting: "Posting..."
+      public: "Public"
+      publishing_to: "publishing to: "
+      share: "Distribuie"
+      share_with: "Share with %{aspect}"
+      whats_on_your_mind: "what's on your mind?"
+    reshare: 
+      reshare: "Reshare"
+    stream_element: 
+      dislike: "I dislike this"
+      like: "I like this"
+      unlike: "Unlike"
+      via: "via %{link}"
+  status_messages: 
+    create: 
+      success: "Successfully mentioned: %{names}"
+    destroy: 
+      failure: "Nu sa putut şterge postul"
+    helper: 
+      no_message_to_display: "Nici un mesaj nou."
+    new: 
+      mentioning: "Mentioning: %{person}"
+    show: 
+      destroy: "Şterge"
+      not_found: "Sorry, we couldn't find that post."
+      permalink: "permalink"
+    too_long: 
+      few: "please make your status messages less than %{count} characters"
+      many: "please make your status messages less than %{count} characters"
+      one: "please make your status messages less than %{count} character"
+      other: "please make your status messages less than %{count} characters"
+      zero: "please make your status messages less than %{count} characters"
+  stream_helper: 
+    hide_comments: "ascunde comentariile"
+    show_comments: "show comments"
+  tags: 
+    show: 
+      nobody_talking: "Nobody is talking about %{tag} yet."
+      people_tagged_with: "People tagged with %{tag}"
+      posts_tagged_with: "Posts tagged with #%{tag}"
+  the_world: "toată lumea"
+  undo: "Undo?"
+  username: "Nume de utilizator"
+  users: 
+    destroy: "Contul a fost închis cu succes."
+    edit: 
+      also_commented: "...someone also comments on your contact's post?"
+      change: "Modifică"
+      change_language: "Modificare limbă"
+      change_password: "Modificare parolă"
+      close_account: "Închide cont"
+      comment_on_post: "...someone comments on your post?"
+      current_password: "Parola curentă"
+      download_photos: "descarcă fotografiile mele"
+      download_xml: "descarcă datele mele (xml)"
+      edit_account: "Editează cont"
+      export_data: "Exportare de date"
+      liked: "...someone likes your post?"
+      mentioned: "...you are mentioned in a post?"
+      new_password: "Parolă nouă"
+      private_message: "...you receive a private message?"
+      receive_email_notifications: "Receive email notificaions?"
+      started_sharing: "...someone starts sharing with you?"
+      your_email: "E-mailul tău"
+      your_handle: "Identificatorul tau pe Diaspora"
+    getting_started: 
+      connect_on_diaspora: "Connect on Diaspora"
+      connect_services: "Connect your services"
+      could_not_find_anyone: "Could not find any friends on Diaspora*. Use the friend finder to invite them."
+      edit_profile: "Editează-ţi profilul"
+      finished: "Terminat!"
+      save_and_continue: "Salvează si continuă"
+      signup_steps: "Complete your sign-up by doing these things:"
+      skip: "sări peste tutorial"
+      step_2: 
+        find_your_friends_on_diaspora: "Ai vrea sa-ţi găseşti prietenii de pe Facebook pe Diaspora?"
+        skip: "Treci peste"
+      step_3: 
+        finish: "Termină"
+        people_already_on_diaspora: "Persoane deja pe Diaspora"
+      welcome: "Bine ai venit pe Diaspora!"
+    public: 
+      does_not_exist: "Utilizatorul %{username} nu există!"
+    update: 
+      email_notifications_changed: "Language Change Failed"
+      language_changed: "Limba schimbată"
+      language_not_changed: "Nu sa putut modifica limba"
+      password_changed: "S-a modificat parola"
+      password_not_changed: "Nu sa putut schimba parola"
+  webfinger: 
+    fetch_failed: "failed to fetch webfinger profile for %{profile_url}"
+    hcard_fetch_failed: "there was a problem fetching the hcard for #{@account}"
+    no_person_constructed: "No person could be constructed from this hcard."
+    not_enabled: "webfinger does not seem to be enabled for %{account}'s host"
+    xrd_fetch_failed: "there was an error getting the xrd from account %{account}"

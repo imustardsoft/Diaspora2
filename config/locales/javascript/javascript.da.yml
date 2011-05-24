@@ -1,0 +1,48 @@
+#   Copyright (c) 2011, Diaspora Inc.  This file is
+#   licensed under the Affero General Public License version 3 or later.  See
+#   the COPYRIGHT file.
+
+
+da: 
+  javascripts: 
+    aspect_dropdown: 
+      add_to_aspect: "Add to aspect"
+      toggle: 
+        few: "In {{count}} aspects"
+        many: "In {{count}} aspects"
+        one: "In {{count}} aspect"
+        other: "In {{count}} aspects"
+        zero: "Add to aspect"
+    comments: 
+      hide: "hide comments"
+      show: "show all comments"
+    confirm_dialog: "Er du sikker?"
+    failed_to_like: "Failed to like!"
+    failed_to_post_message: "Failed to post message!"
+    infinite_scroll: 
+      no_more: "Ikke flere poster."
+    publisher: 
+      at_least_one_aspect: "Du skal dele med mindst et aspekt"
+    search_for: "Søg efter {{name}}"
+    show_more: "show more"
+    timeago: 
+      day: "en dag"
+      days: "%d dage"
+      hour: "ca. en time"
+      hours: "ca. %d timer"
+      minute: "ca. et minut"
+      minutes: "%d minutter"
+      month: "ca. en måned"
+      months: "%d måneder"
+      prefixAgo: "for"
+      prefixFromNow: "om"
+      seconds: "mindre end et minut"
+      suffixAgo: "siden"
+      suffixFromNow: ""
+      year: "ca. et år"
+      years: "%d år"
+    videos: 
+      unknown: "Ukendt video type"
+      watch: "Se denne video på {{provider}}"
+    web_sockets: 
+      disconnected: "Forbindelse er lukket; post vil ikke længere blive opdateret live."

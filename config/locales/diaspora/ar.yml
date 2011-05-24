@@ -1,0 +1,631 @@
+#   Copyright (c) 2011, Diaspora Inc.  This file is
+#   licensed under the Affero General Public License version 3 or later.  See
+#   the COPYRIGHT file.
+
+
+ar: 
+  _comments: "تعليقات"
+  _home: "الرئيسية"
+  _photos: "صور"
+  _services: "خدمات"
+  account: "الحساب الشخصي"
+  activerecord: 
+    errors: 
+      models: 
+        contact: 
+          attributes: 
+            person_id: 
+              taken: "يجب أن يكون خاصا من بين أصدقاء هذا العضو"
+        person: 
+          attributes: 
+            diaspora_handle: 
+              taken: "غير متاح"
+        request: 
+          attributes: 
+            from_id: 
+              taken: "نسخة من طلب سابق"
+        user: 
+          attributes: 
+            email: 
+              taken: "غير متاح"
+            person: 
+              invalid: "غير صالح"
+            username: 
+              taken: "غير متاح"
+  ago: "منذ %{time}"
+  all_aspects: "كل الفئات"
+  application: 
+    helper: 
+      diaspora_alpha: "دياسبرا* ألفا"
+      unknown_person: "شخص غير معروف"
+      video_title: 
+        unknown: "عنوان فيديو غير محدد"
+  are_you_sure: "هل أنت متأكد؟"
+  aspect_memberships: 
+    aspect_dropdown: 
+      add_to_aspect: "Add to aspect"
+      toggle: 
+        few: "In %{count} aspects"
+        many: "In %{count} aspects"
+        one: "In %{count} aspect"
+        other: "In %{count} aspects"
+        zero: "Add to aspect"
+    destroy: 
+      failure: "فشل في حذف عضو من الفئة"
+      no_membership: "لم يتم إيجاد العضو المحدد في هذه الفئة"
+      success: "حذف العضو من الفئة بنجاح"
+  aspects: 
+    add_to_aspect: 
+      failure: "فشل في إضافة صديق إلى الفئة"
+      success: "إضافة صديق إلى الفئة بنجاح"
+    aspect_contacts: 
+      done_editing: "اتمام التغييرات"
+    aspect_stream: 
+      activity: "النشاط"
+      post_time: "زمن النشر"
+      sort_by: "تصنيف حسب"
+    contacts_not_visible: "رؤية عضو لآخر في هاته الفئة غير متاحة"
+    contacts_visible: "رؤية عضو لآخر في هاته الفئة متاحة"
+    create: 
+      failure: "فشل إنشاء الفئة"
+      success: "تم إنشاء الفئة الجديدة %{name}"
+    destroy: 
+      failure: "%{name} ليس خاليا ولا يمكن حذفه"
+      success: ".بنجاح %{name} تم إزالة"
+    edit: 
+      add_existing: "إضافة عضو موجود مسبقا"
+      aspect_list_is_not_visible: "قائمة الفئة مخفية عن الأعضاء الأخرين في الفئة"
+      aspect_list_is_visible: "قائمة الفئة مرئية للأعضاء الآخرين في الفئة"
+      confirm_remove_aspect: "تأكيد حذف هذه الفئة؟"
+      done: "تم بنجاح"
+      make_aspect_list_visible: "فئة مرئية"
+      remove_aspect: "حذف هذه الفئة"
+      rename: "إعادة تسمية"
+      update: "تحديث"
+      updating: "تحديث"
+    few: "%{count} فئة"
+    helper: 
+      are_you_sure: "تأكيد حذف هذه الفئة؟"
+      aspect_not_empty: "الفئة ليست فارغة"
+      remove: "حذف"
+    index: 
+      handle_explanation: "هذا وسيط دياسبرا. مثل البريد الالكتروني, يمكنك منحه للأصدقاء حتى تستطيع التواصل معهم"
+      no_contacts: "لا أعضاء"
+      people_sharing_with_you: "People sharing with you"
+      post_a_message: "انشر رسالة >>"
+    manage: 
+      add_a_new_aspect: "أضف فئة جديدة"
+      add_a_new_contact: "أضف عضوا جديدا"
+      drag_to_add: "اسحب لإضافة أعضاء"
+      manage_aspects: "إدارة الفئات"
+      no_requests: "لا طلبات إضافة جديدة"
+      requests: "طلبات"
+    many: "%{count} فئات"
+    move_contact: 
+      error: "خطأ خلال تحريك عضو: %{inspect}"
+      failure: "لم يعمل %{inspect}"
+      success: "تم تحريك عضو إلى الفئة الجديدة"
+    new: 
+      create: "Create"
+      name: "Name"
+    no_posts_message: 
+      start_talking: "لم تنشر أي رسالة بعد، إبدأ المحادثة"
+    one: "فئة"
+    other: "%{count} فئات"
+    seed: 
+      family: "العائلة"
+      work: "العمل"
+    show: 
+      edit_aspect: "تحرير الفئة"
+    update: 
+      failure: "فئتك, %{name}, اسمها طويل ولا يمكن حفظها."
+      success: ".بنجاح %{name} تم تعديل"
+    zero: "لا فئات"
+  back: "عودة"
+  bookmarklet: 
+    explanation: "%{link} من أي مكان بحفظ هذا الرابط في المفضلة"
+    explanation_link_text: "انشر على دياسبرا"
+    post_something: "انشر شيئا على دياسبرا"
+    post_success: "تم النشر, إغلاق"
+  cancel: "إلغاء"
+  comments: 
+    few: "%{count} تعليقات"
+    many: "%{count} تعليقات"
+    new_comment: 
+      comment: "تعليق"
+      commenting: "تعليق..."
+    one: "1 تعليق"
+    other: "%{count} تعليقات"
+    zero: "لا تعليقات"
+  contacts: 
+    create: 
+      failure: "فشل في إنشاء الإتصال"
+    few: "%{count} أعضاء"
+    many: "%{count} أعضاء"
+    one: "1 عضو"
+    other: "%{count} أعضاء"
+    sharing: 
+      people_sharing: "People sharing with you:"
+    zero: "لا يوجد أعضاء"
+  conversations: 
+    create: 
+      sent: "تم الإرسال"
+    destroy: 
+      success: "تم حذف المحادثة بنجاح"
+    helper: 
+      new_messages: 
+        few: "%{count} رسائل جديدة"
+        many: "%{count} رسائل جديدة"
+        one: "1 رسالة جديدة"
+        other: "%{count} رسائل جديدة"
+        zero: "لايوجد رسائل جديدة"
+    index: 
+      create_a_new_message: "إنشاء رسالة جديدة"
+      inbox: "الوارد"
+      message_inbox: "البريد الوارد"
+      new_message: "رسالة جديدة"
+      no_conversation_selected: "لم تحدد أية محادثة"
+      no_messages: "لا يوجد رسائل"
+    new: 
+      send: "إرسال"
+      subject: "العنوان"
+      to: "إلى"
+    show: 
+      delete: "حذف وحظر المحادثة"
+      reply: "رد"
+  date: 
+    formats: 
+      birthday: "%B %d"
+      birthday_with_year: "%B %d %Y"
+      fullmonth_day: "%B %d"
+  delete: "حذف"
+  email: "بريد إلكتروني"
+  error_messages: 
+    helper: 
+      correct_the_following_errors_and_try_again: ".صحح الأخطاء التالية ثم أعد المحاولة"
+      invalid_fields: "مدخلات غير صحيحة"
+  fill_me_out: "إملأ"
+  hide: "إخفاء"
+  home: 
+    show: 
+      already_account: "لديك حساب؟"
+      choice: "خيار"
+      choice_explanation: "دياسبرا تسمح لك بتصنيف مراسليك إلى مجموعات تدعى الفئات. حصريا في دياسبرا، الفئات تضمن أن صورك، قصصك، طرائفك المنشورة لا تصل إلا إلى من تريد أنت أن تصلهم"
+      learn_about_host: "تعلم كيفية استضافة سيرفر دياسبرا الخاص بك"
+      login_here: "لُج هنا"
+      ownership: "ملكية"
+      ownership_explanation: "صورك هي ملكية خاصة لك، وليس عليك التخلي عن ملكيتها بمجرد مشاركتها. لك الملكية المطلقة لكل ما تشاركه في دياسبرا، نعطيك كل الصلاحيات في كيفية مشاركتها"
+      share_what_you_want: "شارك ما تريد، مع من تريد"
+      simplicity: "بساطة"
+      simplicity_explanation: "مع دياسبرا المشاركة والخصوصية هي ترادف للسهولة والشفافية. دياسبرا صنعت لاحترام الخصوصية، فليس وجوبا عليك الخوص في صفحات عديدة من الإعدادات والخيارات لتبقي حسابك آمنا وكما تريده."
+      tagline_first_half: "شارك ما تريد،"
+      tagline_second_half: "مع من تريد."
+  invitations: 
+    check_token: 
+      not_found: "الدعوة الرمزية غير موجودة"
+    create: 
+      already_contacts: "لقد قمت بإنشاء اتصال مع هذا العضو مسبقا"
+      already_sent: "لقد قمت بدعوة هذا الشخص مسبقا"
+      no_more: "لم يتبقى لك أية دعوات"
+      own_address: "You can't send an invitation to your own address."
+      rejected: "واجه هذا البريد الإلكتروني مشاكلا:  "
+      sent: "تم إرسال دعوتك"
+    edit: 
+      sign_up: "تسجيل"
+    new: 
+      already_invited: "تم دعوته مسبقا"
+      aspect: "فئة"
+      comma_seperated_plz: "يمكن إدخال أكثر من بريد إلكتروني واحد باستعمال علامة التوقف فاصلة, بين كل بريد وآخر"
+      if_they_accept_info: "إذا قبلوا دعوتك ، سيتم إضافتهم إلى الفئة التي دعوتهم إليها"
+      invite_someone_to_join: "دعوة صديق للإنضمام إلى دياسبرا"
+      personal_message: "رسالة شخصية"
+      resend: "إعادة إرسال"
+      send_an_invitation: "إرسال دعوة"
+      send_invitation: "إرسال الدعوة"
+      to: "إلى"
+  layouts: 
+    application: 
+      have_a_problem: "واجهت مشكلة؟ اعثر على حل هنا"
+      powered_by: "بدعم DIASPORA*"
+      public_feed: "فيد دياسبرا العام لـ for %{name}"
+      toggle: "التحول إلى الموقع الخاص بالهواتف المحمولة"
+      whats_new: "ما الجديد؟"
+      your_aspects: "فئاتك"
+    header: 
+      admin: "admin"
+      blog: "مدونة"
+      code: "شيفرة"
+      login: "لُج"
+      logout: "خروج"
+      profile: "الصفحة الشخصية"
+      settings: "إعدادات"
+  likes: 
+    likes: 
+      people_dislike_this: 
+        few: "%{count} أشخاص لم يعجبهم هذا"
+        many: "%{count} أشخاص لم يعجبهم هذا"
+        one: "1 لم يعجبه هذا"
+        other: "%{count} أشخاص لم يعجبهم هذا"
+        zero: "لا أحد يكره هذا"
+      people_like_this: 
+        few: "%{count} أشخاص يعجبهم هذا"
+        many: "%{count} أشخاص يعجبهم هذا"
+        one: "1 أعجبه هذا"
+        other: "%{count} أشخاص أعجبهم هذا"
+        zero: "لا أحد أحب هذا"
+  more: "أكثر"
+  next: "التالي"
+  no_results: "لا نتائج موجودة"
+  notifications: 
+    also_commented: "أيضا علق على"
+    also_commented_deleted: "علق على منشور محذوف"
+    comment_on_post: "علق على"
+    deleted: "تم الحذف"
+    helper: 
+      new_notifications: 
+        few: "%{count} تنبيهات جديدة"
+        many: "%{count} تنبيهات جديدة"
+        one: "1 تنبيه جديد"
+        other: "%{count} تنبيهات جديدة"
+        zero: "لا تنبيهات جديدة"
+    index: 
+      and: "و"
+      and_others: "و %{number} آخرين"
+      mark_all_as_read: "وضع الجميع كمقروء"
+      notifications: "تنبيهات"
+    liked: "أعجبه منشورك:"
+    liked_post_deleted: "liked your deleted post."
+    mentioned: "قام بذكرك في"
+    new_request: "عرض المشاركة معك"
+    post: "منشور"
+    private_message: "أرسل لك رسالة"
+    started_sharing: "started sharing with you."
+  notifier: 
+    also_commented: 
+      commented: "علق أيضا على مشاركة %{post_author}:"
+      sign_in: "لُج لمشاهدته"
+      subject: "%{name} على أيضا على منشور %{post_author}."
+    comment_on_post: 
+      commented: "علق على مشاركتك"
+      sign_in: "لُج لمشاهدته"
+      subject: "%{name} علق على مشاركتك"
+    diaspora: "البريد الآلي لدياسبرا"
+    hello: "مرحبا %{name}!"
+    liked: 
+      liked: "%{name} أعجبه منشورك: "
+      sign_in: "لج لمشاهدته"
+      subject: "%{name} أعجبه منشورك"
+    love: "كل الود,"
+    manage_your_email_settings: "إدارة إعدادات بريدك الإلكتروني"
+    mentioned: 
+      mentioned: "قام بذكرك في مشاركة:"
+      sign_in: "لُج لمشاهدته"
+      subject: "%{name} قام بذكرك في دياسبرا"
+    private_message: 
+      message_subject: "العنوان: %{subject}"
+      private_message: "راسلك برسالة خاصة:"
+      sign_in: "لُج لمشاهدته"
+      subject: "%{name} راسلك برسالة خاصة في دياسبرا"
+    single_admin: 
+      admin: "إدارة دياسبرا"
+      subject: "رسالة من إدارة دياسبرا:"
+    started_sharing: 
+      sharing: "has started sharing with you!"
+      sign_in: "Sign in here"
+      subject: "%{name} has started sharing with you on Diaspora*"
+    thanks: "شكرا,"
+  ok: "حسنا"
+  or: "أو"
+  password: "كلمة المرور"
+  password_confirmation: "تأكيد كلمة المرور الجديدة"
+  people: 
+    add_contact_small: 
+      add_contact_from_tag: "إضافة مراسل من tag"
+    aspect_list: 
+      edit_membership: "تعديل العضويات بالفئات"
+    few: "%{count} أعضاء"
+    helper: 
+      people_on_pod_are_aware_of: " الأعضاء بالموقع مقبلون على"
+      results_for: " نتائج من أجل %{params}"
+    index: 
+      couldnt_find_them_send_invite: "لم تجدهم؟ أرسل دعوة"
+      no_one_found: "...ولم يعثر على أحد"
+      no_results: "يجب تحديد شيء للبحث عنه"
+      results_for: "نتائج البحث عن"
+    many: "%{count} أعضاء"
+    one: "1 عضو"
+    other: "%{count} عضو"
+    person: 
+      add_contact: "إضافة عضو"
+      already_connected: "أضيف مسبقا"
+      pending_request: "طلبات معلقة"
+      thats_you: "هذا أنت"
+    profile_sidebar: 
+      bio: "سيرة"
+      born: "تاريخ الميلاد"
+      edit_my_profile: "تحرير صفحتي الشخصية"
+      gender: "الجنس"
+      in_aspects: "في الفئة"
+      location: "المكان"
+      remove_contact: "حذف العضو"
+      remove_from: "حذف %{name} من %{aspect}?"
+    show: 
+      add_some: "إضافة"
+      does_not_exist: "هذا العضو غير موجود"
+      edit: "تعديل"
+      incoming_request: "%{name} يريد المشاركة معك"
+      mention: "إشارة"
+      message: "رسالة"
+      no_posts: "لا يوجد رسائل لعرضها"
+      not_connected: "أنت لا تتشارك مع هذا العضو"
+      recent_posts: "منشورات حديثة"
+      recent_public_posts: "منشورات عامة حديثة"
+      return_to_aspects: "العودة إلى صفحة الفئات"
+      see_all: "مشاهدة الكل"
+      start_sharing: "بدء المشاركة"
+      to_accept_or_ignore: "للقبول أو التجاهل"
+      you_have_no_tags: "لم تستخدم أي tags!"
+    webfinger: 
+      fail: "للأسف، لم نجد %{handle}."
+    zero: "لا أحد"
+  photos: 
+    create: 
+      integrity_error: "فشل رفع الصورة، هل أنت متأكد أن نوع الملف صورة؟"
+      runtime_error: "فشل رفع الصورة، هل قمت بربطها مع نص؟"
+      type_error: "فشل رفع صورة، أمتأكد أنها صورة؟"
+    destroy: 
+      notice: "تم حذف الصورة"
+    edit: 
+      editing: "تحرير"
+    new: 
+      back_to_list: "عودة إلى القائمة"
+      new_photo: "صورة جديدة"
+      post_it: "أنشرها"
+    new_photo: 
+      empty: "{file} فارغ، الرجاء إعادة تحديد الملفات بدون تحديده"
+      invalid_ext: "{file} له صيغة غير صالحة. {extensions} هي الصيغ الوحيدة المسموح بها"
+      size_error: "{file} ذو حجم كبير جدا, {sizeLimit} هو الحجم الأقصى المسموح به."
+    new_profile_photo: 
+      or_select_one: "أو اختر واحدة من الموجودات مسبقا"
+      upload: "رفع صورة شخصية جديدة"
+    photo: 
+      view_all: "مشاهدة جميع صور %{name}"
+    show: 
+      collection_permalink: "رابط دائم"
+      delete_photo: "حذف الصورة"
+      edit: "تعديل"
+      edit_delete_photo: "تعديل وصف الصورة / حذف الصورة"
+      make_profile_photo: "اجعلها صورة شخصية"
+      original_post: "منشور أصلي"
+      permalink: "رابط دائم"
+      update_photo: "تحديث صورة"
+      view: "مشاهدة"
+    update: 
+      error: "فشل تحرير الصورة."
+      notice: "تم تحديث الصورة بنجاح"
+  post_visibilites: 
+    update: 
+      post_hidden: "تم إخفاء مشاركة %{name}"
+  posts: 
+    doesnt_exist: "هذه المشاركة غير موجودة"
+  previous: "السابق"
+  profile: "الصفحة الشخصية"
+  profiles: 
+    edit: 
+      allow_search: "السماح للجميع بالبحث عنك من خلال دياسبرا"
+      edit_profile: "تحرير الصفحة الشخصية"
+      first_name: "الإسم"
+      last_name: "اللقب"
+      update_profile: "تحديث الصفحة الشخصية"
+      your_bio: "سيرتك الشخصية"
+      your_birthday: "تاريخ الميلاد"
+      your_gender: "الجنس"
+      your_location: "المكان"
+      your_name: "إسمك"
+      your_photo: "صورتك"
+      your_private_profile: "صفحتك الخاصة"
+      your_public_profile: "صفحتك العامة"
+      your_tags: "أنت: في 5 #tags"
+      your_tags_placeholder: "مثال: #diaspora #ironing #kittens #music"
+    update: 
+      failed: "فشل في تحديث حسابك الشخصي"
+      updated: "تم تحديث حسابك الشخصي"
+  registrations: 
+    closed: "التسجيلات مغلقة على هذه المنصة"
+    create: 
+      success: "!Diaspora سجل في"
+    edit: 
+      cancel_my_account: "إلغاء حسابي"
+      edit: "تعديل %{name}"
+      leave_blank: "(اتركها فارغة في حال أردت عدم تغييرها)"
+      password_to_confirm: "(نحتاج لكلمة مرورك الحالية لتأكيد التغييرات)"
+      unhappy: "غير راض?"
+      update: "تحديث"
+    new: 
+      enter_email: "أدخل بريد إلكتروني"
+      enter_password: "أدخل كلمة مرور"
+      enter_password_again: "أعد إدخال كلمة المرور"
+      enter_username: "اختر معرف (فقط حروف, أرقام, و الإشارات الخطية)"
+      sign_up: "التسجيل"
+      sign_up_for_diaspora: "التسجيل في دياسبرا"
+  requests: 
+    create: 
+      sending: "إرسال..."
+      sent: "قمت بعرض المشاركة مع %{name}.  سيصلهم طلبك فورا حال تسجيل دخولهم في دياسبرا"
+    destroy: 
+      error: "الرجاء تحديد فئة"
+      ignore: ". تجاهل طلب الصداقة"
+      success: ".أنتم الآن أصدقاء"
+    helper: 
+      new_requests: 
+        few: "%{count} عروض مشاركة!"
+        many: "%{count} عروض مشاركة!"
+        one: "عرض مشاركة!"
+        other: "%{count} عروض مشاركة!"
+        zero: "لا يوجد عروض مشاركة جديدة"
+    manage_aspect_contacts: 
+      existing: "عضو موجود مسبقا"
+      manage_within: "إدارة الأعضاء"
+    new_request_to_person: 
+      sent: "إرسال!"
+  search: "بحث"
+  services: 
+    create: 
+      success: "تمت المصادقة بنجاح"
+    destroy: 
+      success: "تم مسح المصادقة بنجاح"
+    failure: 
+      error: "خطأ خلال محاولة الإتصال بالخدمة"
+    finder: 
+      friends: 
+        few: "%{count} أصدقاء"
+        many: "%{count} أصدقاء"
+        one: "1 أصدقاء"
+        other: "%{count} أصدقاء"
+        zero: "لا أصدقاء"
+      invite_your_friends_from: "دعوة أصدقائك من %{service}"
+      not_connected: "غير متصل"
+    index: 
+      connect_to_facebook: "إتصل بـ فسبوك"
+      connect_to_twitter: "إتصل بتويتر"
+      disconnect: "فصل الإتصال"
+      edit_services: "تعديل الخدمات"
+      logged_in_as: "متصل بحساب"
+      really_disconnect: "فصل إتصال %{service}?"
+    inviter: 
+      click_link_to_accept_invitation: "إضغط على هذا الرابط لقبول دعوتك"
+      join_me_on_diaspora: "انضم إلي في DIASPORA*"
+    remote_friend: 
+      invite: "دعوة"
+      resend: "إعادة إرسال"
+  settings: "إعدادات"
+  shared: 
+    add_contact: 
+      create_request: "ابحث باستخدام وسيط دياسبرا"
+      diaspora_handle: "وسيط دياسبرا"
+      enter_a_diaspora_username: "أدخل معرف دياسبرا:"
+      know_email: "تعرف بريد الإلكتروني؟ يجدر بك دعوتهم"
+      your_diaspora_username_is: "معرف دياسبورا خاصتك هو: %{diaspora_handle}"
+    contact_list: 
+      all_contacts: "جميع الأعضاء"
+    footer: 
+      logged_in_as: "ولوج بـ %{name}"
+      your_aspects: "الفئات خاصتك"
+    invitations: 
+      by_email: "عبر البريد الإلكتروني"
+      dont_have_now: "لا تملك دعوات حاليا، لكنها قادمة قريبا"
+      from_facebook: "عبر فسبوك"
+      invitations_left: "(%{count} متبقية)"
+      invite_someone: "دعوة شخص"
+      invite_your_friends: "دعوات لأصدقائك"
+      invites: "دعوات"
+      invites_closed: "الدعوات غير متاحة على هذه المنصة حاليا"
+    notification: 
+      new: "جديد %{type} من %{from}"
+    public_explain: 
+      logged_in: "ولوج بـ %{service}"
+      manage: "إدارة الخدمات المتصلة"
+      outside: "الرسائل العامة، متاحة للجميع حتى لمن هم خارج دياسبرا"
+      title: "أنت على وشك نشر رسالة عامة"
+    publisher: 
+      add_photos: "إضافة صورة"
+      all: "الجميع"
+      all_contacts: "جميع الفئات"
+      click_to_share_with: "إضغط للمشاركة مع: "
+      make_public: "عممها"
+      post_a_message_to: "انشر رسالة إلى %{aspect}"
+      posting: "نشر..."
+      public: "العالم"
+      publishing_to: "نشر إلى: "
+      share: "مشاركة"
+      share_with: "مشاركة مع %{aspect}"
+      whats_on_your_mind: "ما يجول في خاطرك؟"
+    reshare: 
+      reshare: "إعادة مشاركة"
+    stream_element: 
+      dislike: "لم يعجبني هذا"
+      like: "أعجبني هذا"
+      unlike: "إلغاء إعجابي"
+      via: "via %{link}"
+  status_messages: 
+    create: 
+      success: "ذكرت بنجاح: %{names}"
+    destroy: 
+      failure: "فشل في حذف منشور"
+    helper: 
+      no_message_to_display: "لا يوجد رسائل لعرضها"
+    new: 
+      mentioning: "إشارة إلى: %{person}"
+    show: 
+      destroy: "إزالة"
+      not_found: "للأسف، لم نجد هذا المنشور"
+      permalink: "رابط دائم"
+    too_long: 
+      few: "please make your status messages less than %{count} characters"
+      many: "please make your status messages less than %{count} characters"
+      one: "please make your status messages less than %{count} character"
+      other: "please make your status messages less than %{count} characters"
+      zero: "please make your status messages less than %{count} characters"
+  stream_helper: 
+    hide_comments: "إخفاء التعليقات"
+    show_comments: "إظهار التعليقات"
+  tags: 
+    show: 
+      nobody_talking: "لا أحد يتكلم %{tag} بعد"
+      people_tagged_with: "أشخاص tagged بـ %{tag}"
+      posts_tagged_with: "رسائل tagged بـ #%{tag}"
+  the_world: "العالم"
+  undo: "تراجع؟"
+  username: "معرف"
+  users: 
+    destroy: "تم إغلاق الحساب بنجاح"
+    edit: 
+      also_commented: "...علق أحدهم على منشور مراسلك"
+      change: "تغيير"
+      change_language: "تغيير اللعة"
+      change_password: "تغيير كلمة المرور"
+      close_account: "غلق الحساب"
+      comment_on_post: "...علق أحدهم على رسالتك"
+      current_password: "كلمة المرور الحالية"
+      download_photos: "تحميل صوري"
+      download_xml: "تحميل xml خاصتي"
+      edit_account: "تعديل الحساب"
+      export_data: "تصدير البيانات"
+      liked: "...أعجب أحدهم بمنشورك"
+      mentioned: "...تم ذكرك في رسالة"
+      new_password: "كلمة مرور جديدة"
+      private_message: "...وصلتك راسلة خاصة"
+      receive_email_notifications: "استقبال تنبيهات عبر البريد الإلكتروني؟"
+      started_sharing: "...someone starts sharing with you?"
+      your_email: "بريدك الإلكتروني"
+      your_handle: "وسيط دياسبرا خاصتك"
+    getting_started: 
+      connect_on_diaspora: "الإتصال بدياسبورا"
+      connect_services: "الإتصال بخدماتك"
+      could_not_find_anyone: "لم تجد أيا من أصدقاء في دياسبرا، إستخدم بحث الأصدقاء لدعوتهم"
+      edit_profile: "تعديل صفحتك الشخصية"
+      finished: "تم"
+      save_and_continue: "حفظ واستمرار"
+      signup_steps: "أكمل تسجيلك بالقيام بالتالي:"
+      skip: "تجاوز هذه المقدمة"
+      step_2: 
+        find_your_friends_on_diaspora: "هل تريد إيجاد أصدقائك على الفسبوك في دياسبرا"
+        skip: "تجاوز"
+      step_3: 
+        finish: "تم"
+        people_already_on_diaspora: "أشخاص موجودين مسبقا في دياسبرا"
+      welcome: "مرحبا بك في دياسبرا!"
+    public: 
+      does_not_exist: "هذا المستخدم %{username} غير موجود"
+    update: 
+      email_notifications_changed: "فشل تغيير اللغة"
+      language_changed: "تم تغيير اللغة"
+      language_not_changed: "فشل تغيير اللغة"
+      password_changed: "تم تغيير كلمة المرور"
+      password_not_changed: "فشل تغيير كلمة المرور"
+  webfinger: 
+    fetch_failed: "فشل تحميل webfinger الحساب لـ %{profile_url}"
+    hcard_fetch_failed: "خطأ خلال تحميل hcard الخاص بـ #{@account}"
+    no_person_constructed: "هذا الـ hcard غير صالح."
+    not_enabled: "webfinger غير مفعل للمضيف %{account}"
+    xrd_fetch_failed: "خطأ خلال استرجاع xrd من الحساب %{account}"

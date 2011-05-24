@@ -1,0 +1,52 @@
+-#   Copyright (c) 2010, Diaspora Inc.  This file is
+-#   licensed under the Affero General Public License version 3 or later.  See
+-#   the COPYRIGHT file.
+
+- content_for :page_title do
+  - if params[:name]
+    = "##{params[:name]}"
+  - else
+    = t('.whatup', :pod => @pod_url)
+
+- content_for :head do
+  = include_javascripts :home
+
+- content_for :body_class do
+  = "tags_show"
+
+.span-24.last
+  %h1.tag
+    = "##{params[:name]}"
+
+.span-13
+  #main_stream.stream
+    - if @posts.length > 0
+      = render 'shared/stream', :posts => @posts
+      #pagination
+        =link_to(t('more'), next_page_path, :class => 'paginate')
+    - else
+      = t('.nobody_talking', :tag => "##{params[:name]}")
+
+.prepend-2.span-9.last
+  %h3
+    = t('people', :count => @people_count)
+
+  .side_stream.stream
+    - for person in @people
+      .stream_element{:id => person.id}
+        = person_image_link(person)
+        - if current_user
+          - contact = current_user.contacts.find_by_person_id(person.id)
+          - contact ||= Contact.new(:person => person)
+          - unless person == current_user.person
+            .right
+              = render 'aspect_memberships/aspect_dropdown', :contact => contact, :person => person, :hang => 'left'
+
+        .content
+          %span.from
+            =person_link(person)
+          .info
+            = person.profile.format_tags(person.profile.tag_string)
+
+    - if @people_count > 15
+      \...
