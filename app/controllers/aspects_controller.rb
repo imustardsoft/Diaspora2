@@ -172,11 +172,12 @@ class AspectsController < ApplicationController
     puts "**************"
     notification = Notification.find(params[:id])
     if params[:status] == "approve"
+      aspect = Aspect.find(notification.notification_actors[0].person_id)
       
     elsif params[:status] == "reject"
 
     end
-    notification.update_attribute(:unread => true)
+    #notification.update_attribute(:unread, true)
     render :nothing => true
   end
 
