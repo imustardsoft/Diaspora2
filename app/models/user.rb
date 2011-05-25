@@ -309,8 +309,8 @@ class User < ActiveRecord::Base
   end
 
   def seed_aspects
-    self.aspects.create(:name => I18n.t('aspects.seed.family'))
-    self.aspects.create(:name => I18n.t('aspects.seed.work'))
+    #self.aspects.create(:name => I18n.t('aspects.seed.family'))
+    #self.aspects.create(:name => I18n.t('aspects.seed.work'))
   end
 
   def self.generate_key
