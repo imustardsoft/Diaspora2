@@ -164,6 +164,22 @@ class AspectsController < ApplicationController
     params[:max_time] ||= Time.now + 1
   end
 
+  def reject_or_approve
+    puts "***************"
+    puts params[:status]
+    puts params[:id]
+    puts current_user.id
+    puts "**************"
+    notification = Notification.find(params[:id])
+    if params[:status] == "approve"
+      
+    elsif params[:status] == "reject"
+
+    end
+    notification.update_attribute(:unread => true)
+    render :nothing => true
+  end
+
   private
   def save_sort_order
     if params[:sort_order].present?

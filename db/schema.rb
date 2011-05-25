@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524033202) do
+ActiveRecord::Schema.define(:version => 20110525092924) do
 
   create_table "aspect_memberships", :force => true do |t|
     t.integer  "aspect_id",  :null => false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110524033202) do
     t.string   "user_mongo_id"
     t.boolean  "contacts_visible", :default => true,  :null => false
     t.boolean  "open",             :default => false
+    t.integer  "parent_id"
   end
 
   add_index "aspects", ["mongo_id"], :name => "index_aspects_on_mongo_id"
