@@ -32,11 +32,6 @@ class NotificationsController < ApplicationController
 
   ##### by cloud and reject or approve by email 
   def reject_or_approve
-    puts "***************"
-    puts params[:status]
-    puts params[:id]
-    puts current_user.id
-    puts "**************"
     notification = Notification.find(params[:id])
     if params[:status] == "approve"
       contact_receive = Contact.find(:first, :conditions => ["user_id = #{current_user.id} and person_id = #{params[:id]}"])

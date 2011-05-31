@@ -23,8 +23,11 @@ module Diaspora
         opts[:max_time] = Time.at(opts[:max_time]) if opts[:max_time].is_a?(Integer)
         opts[:max_time] ||= Time.now + 1
         select_clause ='DISTINCT posts.id, posts.updated_at AS updated_at, posts.created_at AS created_at'
-        puts opts[:hidden]
-        posts_from_others = Post.joins(:contacts).where( :post_visibilities => {:hidden => opts[:hidden]}, :contacts => {:user_id => self.id})
+
+        # cloud modify posts from others
+        #posts_from_others = Post.joins(:contacts).where( :post_visibilities => {:hidden => opts[:hidden]}, :contacts => {:user_id => self.id})
+        posts_from_others = Post.joins(:aspects).where("posts.author_id != #{self.id} and aspects.id = ?", opts[:by_members_of])
+        # end
         posts_from_self = self.person.posts
         puts "*************"
         puts posts_from_others.inspect

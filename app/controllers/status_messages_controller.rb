@@ -42,7 +42,11 @@ class StatusMessagesController < ApplicationController
     params[:status_message][:public] = public_flag
 
     @status_message = current_user.build_post(:status_message, params[:status_message])
-    aspects = current_user.aspects_from_ids(params[:aspect_ids])
+
+    # cloud modify find aspect
+    #aspects = current_user.aspects_from_ids(params[:aspect_ids])
+    aspects = Aspect.where(:id => params[:aspect_ids])
+    # end
 
     if !photos.empty?
       @status_message.photos << photos
