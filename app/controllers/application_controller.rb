@@ -113,7 +113,7 @@ class ApplicationController < ActionController::Base
 
   # cloud add method
   def find_everyone_aspects
-    Aspect.where("aspects.user_id = #{current_user.id} or aspect_memberships.contact_id = #{current_user.id}").includes(:aspect_memberships)
+    Aspect.where("aspects.user_id = #{current_user.id} or (contacts.person_id = #{current_user.id} and contacts.sharing = true)").joins(:contacts)
   end
   # end
 end

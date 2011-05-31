@@ -35,9 +35,7 @@ class AspectsController < ApplicationController
     end
 
     @selected_contacts = @aspects.map { |aspect| aspect.contacts }.flatten.uniq unless params[:only_posts]
-    puts "$$$$$$$$$$$$$$$$"
-    puts @aspects.inspect
-    puts "$$$$$$$$$$$$$$$$"
+
     @aspect_ids = @aspects.map { |a| a.id }
     posts = current_user.visible_posts(:by_members_of => @aspect_ids,
                                            :type => ['StatusMessage','ActivityStreams::Photo'],
