@@ -29,4 +29,25 @@ class NotificationsController < ApplicationController
     Notification.where(:recipient_id => current_user.id).update_all(:unread => false)
     redirect_to aspects_path
   end
+
+  ##### by cloud and reject or approve by email 
+  def reject_or_approve
+    puts "***************"
+    puts params[:status]
+    puts params[:id]
+    puts current_user.id
+    puts "**************"
+    notification = Notification.find(params[:id])
+    if params[:status] == "approve"
+      contact_receive = Contact.find(:first, :conditions => ["user_id = #{current_user.id} and person_id = #{params[:id]}"])
+      contact_share = Contact.find(:first, :conditions => ["user_id = #{params[:id]} and person_id = #{current_user.id}"])
+      contact_receive.update_attribute(:receiving, true)
+      contact_share.update_attribute(:sharing, true)
+    elsif params[:status] == "reject"
+
+    end
+    notification.update_attribute(:unread, false)
+    redirect_to notifications_path
+  end
+  
 end

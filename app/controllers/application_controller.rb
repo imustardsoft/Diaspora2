@@ -29,7 +29,10 @@ class ApplicationController < ActionController::Base
         @unread_message_count = ConversationVisibility.sum(:unread, :conditions => "person_id = #{current_user.person.id}")
       end
       @object_aspect_ids = []
-      @all_aspects = current_user.aspects
+      ##   by cloud
+      #@all_aspects = current_user.aspects
+      @all_aspects = find_everyone_aspects
+      # end
     end
   end
 
@@ -107,4 +110,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
       stored_location_for(:user) || aspects_path(:a_ids => current_user.aspects.where(:open => true).select(:id).all.map{|a| a.id})
   end
+
+  # cloud add method
+  def find_everyone_aspects
+    Aspect.where("aspects.user_id = #{current_user.id} or aspect_memberships.contact_id = #{current_user.id}").includes(:aspect_memberships)
+  end
+  # end
 end

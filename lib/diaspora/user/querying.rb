@@ -23,15 +23,25 @@ module Diaspora
         opts[:max_time] = Time.at(opts[:max_time]) if opts[:max_time].is_a?(Integer)
         opts[:max_time] ||= Time.now + 1
         select_clause ='DISTINCT posts.id, posts.updated_at AS updated_at, posts.created_at AS created_at'
-
+        puts opts[:hidden]
         posts_from_others = Post.joins(:contacts).where( :post_visibilities => {:hidden => opts[:hidden]}, :contacts => {:user_id => self.id})
         posts_from_self = self.person.posts
-
-        if opts[:by_members_of]
-          posts_from_others = posts_from_others.joins(:contacts => :aspect_memberships).where(
-            :aspect_memberships => {:aspect_id => opts[:by_members_of]})
-          posts_from_self = posts_from_self.joins(:aspect_visibilities).where(:aspect_visibilities => {:aspect_id => opts[:by_members_of]})
-        end
+        puts "*************"
+        puts posts_from_others.inspect
+        puts posts_from_self.inspect
+        puts "**************"
+        # cloud comment line
+#        if opts[:by_members_of]
+#          puts "one two three four"
+#          puts opts[:by_members_of].inspect
+#          posts_from_others = posts_from_others.joins(:contacts => :aspect_memberships).where(:aspect_memberships => {:aspect_id => opts[:by_members_of]})
+#          posts_from_self = posts_from_self.joins(:aspect_visibilities).where(:aspect_visibilities => {:aspect_id => opts[:by_members_of]})
+#        end
+        # end
+        puts "@@@@@@@@@@@@@@"
+        puts posts_from_others.inspect
+        puts posts_from_self.inspect
+        puts "@@@@@@@@@@@@@@@@@@"
 
         posts_from_others = posts_from_others.select(select_clause).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time]))
         posts_from_self = posts_from_self.select(select_clause).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time]))

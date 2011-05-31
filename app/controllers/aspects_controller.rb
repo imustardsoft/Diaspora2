@@ -12,9 +12,15 @@ class AspectsController < ApplicationController
 
   def index
     if params[:a_ids]
-      @aspects = current_user.aspects.where(:id => params[:a_ids])
+      # cloud modify find aspects
+      #@aspects = current_user.aspects.where(:id => params[:a_ids])
+      @aspects = Aspect.where(:id => params[:a_ids])
+      # end
     else
-      @aspects = current_user.aspects
+      ### by cloud find aspect
+      #@aspects = current_user.aspects
+      @aspects = find_everyone_aspects
+      # end
       @contacts_sharing_with = current_user.contacts.sharing
     end
 
@@ -29,7 +35,9 @@ class AspectsController < ApplicationController
     end
 
     @selected_contacts = @aspects.map { |aspect| aspect.contacts }.flatten.uniq unless params[:only_posts]
-
+    puts "$$$$$$$$$$$$$$$$"
+    puts @aspects.inspect
+    puts "$$$$$$$$$$$$$$$$"
     @aspect_ids = @aspects.map { |a| a.id }
     posts = current_user.visible_posts(:by_members_of => @aspect_ids,
                                            :type => ['StatusMessage','ActivityStreams::Photo'],
@@ -162,23 +170,6 @@ class AspectsController < ApplicationController
 
   def ensure_page
     params[:max_time] ||= Time.now + 1
-  end
-
-  def reject_or_approve
-    puts "***************"
-    puts params[:status]
-    puts params[:id]
-    puts current_user.id
-    puts "**************"
-    notification = Notification.find(params[:id])
-    if params[:status] == "approve"
-      aspect = Aspect.find(notification.notification_actors[0].person_id)
-      
-    elsif params[:status] == "reject"
-
-    end
-    #notification.update_attribute(:unread, true)
-    render :nothing => true
   end
 
   private

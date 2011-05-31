@@ -22,8 +22,8 @@
                 .right
                   -# by cloud
                   -# render 'aspect_memberships/aspect_dropdown', :contact => contact, :person => note.target, :hang => 'left'
-                  = link_to 'Reject', reject_or_approve_path+"?status=reject&id=#{note.id}"
-                  = link_to 'Approve', reject_or_approve_path+"?status=approve&id=#{note.id}"
+                  = link_to 'Reject', reject_or_approve_path+"?status=reject&id=#{contact.id}"
+                  = link_to 'Approve', reject_or_approve_path+"?status=approve&id=#{contact.id}"
                   -# end
               %span.from
                 = notification_people_link(note)
