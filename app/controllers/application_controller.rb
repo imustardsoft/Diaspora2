@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
       ##   by cloud
       #@all_aspects = current_user.aspects
       @all_aspects = find_everyone_aspects
+      @my_aspects = find_author_aspects
       # end
     end
   end
@@ -114,6 +115,10 @@ class ApplicationController < ActionController::Base
   # cloud add method
   def find_everyone_aspects
     Aspect.select("distinct aspects.*").where("aspects.user_id = #{current_user.id} or (contacts.person_id = #{current_user.id} and contacts.sharing = true)").joins(:contacts)
+  end
+
+  def find_author_aspects
+    current_user.aspects
   end
   # end
 end
