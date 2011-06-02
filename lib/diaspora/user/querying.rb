@@ -25,14 +25,15 @@ module Diaspora
         select_clause ='DISTINCT posts.id, posts.updated_at AS updated_at, posts.created_at AS created_at'
 
         # cloud modify posts from others
+        
         #posts_from_others = Post.joins(:contacts).where( :post_visibilities => {:hidden => opts[:hidden]}, :contacts => {:user_id => self.id})
-        posts_from_others = Post.joins(:aspects).where("posts.author_id != #{self.id} and aspects.id = ?", opts[:by_members_of])
+       
+        #posts_from_others = Post.joins(:aspects).where("posts.author_id != #{self.id} and aspects.id in (?)", opts[:by_members_of]) if opts[:by_members_of].class == "Array"
+        #posts_from_others = Post.includes(:aspect_visibilities).where("posts.author_id != #{self.id} and aspect_visibilities.aspect_id = ?", opts[:by_members_of]) if (opts[:by_members_of].class == "Fixnum" || opts[:by_members_of].class == "String")
+        
         # end
-        posts_from_self = self.person.posts
-        puts "*************"
-        puts posts_from_others.inspect
-        puts posts_from_self.inspect
-        puts "**************"
+        #posts_from_self = self.person.posts
+        
         # cloud comment line
 #        if opts[:by_members_of]
 #          puts "one two three four"
@@ -40,19 +41,17 @@ module Diaspora
 #          posts_from_others = posts_from_others.joins(:contacts => :aspect_memberships).where(:aspect_memberships => {:aspect_id => opts[:by_members_of]})
 #          posts_from_self = posts_from_self.joins(:aspect_visibilities).where(:aspect_visibilities => {:aspect_id => opts[:by_members_of]})
 #        end
+        
+
+        #posts_from_others = posts_from_others.select(select_clause).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time]))
+        #posts_from_self = posts_from_self.select(select_clause).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time]))
+
+        #all_posts = "(#{posts_from_others.to_sql}) UNION ALL (#{posts_from_self.to_sql}) ORDER BY #{opts[:order]} LIMIT #{opts[:limit]}"
         # end
-        puts "@@@@@@@@@@@@@@"
-        puts posts_from_others.inspect
-        puts posts_from_self.inspect
-        puts "@@@@@@@@@@@@@@@@@@"
+        #post_ids = Post.connection.execute(all_posts).map{|r| r.first}
 
-        posts_from_others = posts_from_others.select(select_clause).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time]))
-        posts_from_self = posts_from_self.select(select_clause).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time]))
-
-        all_posts = "(#{posts_from_others.to_sql}) UNION ALL (#{posts_from_self.to_sql}) ORDER BY #{opts[:order]} LIMIT #{opts[:limit]}"
-        post_ids = Post.connection.execute(all_posts).map{|r| r.first}
-
-        Post.where(:id => post_ids, :pending => false, :type => opts[:type]).select('DISTINCT posts.*').limit(opts[:limit]).order(order_with_table)
+        #Post.where(:id => post_ids, :pending => false, :type => opts[:type]).select('DISTINCT posts.*').limit(opts[:limit]).order(order_with_table)
+        Post.includes(:aspect_visibilities).select(select_clause).where("aspect_visibilities.aspect_id in (?)", opts[:by_members_of]).limit(opts[:limit]).order(order_with_table).where(Post.arel_table[order_field].lt(opts[:max_time])).where("pending = false").where(:type => opts[:type])
       end
 
       def visible_photos(opts = {})
