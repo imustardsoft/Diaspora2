@@ -44,6 +44,8 @@ class AspectsController < ApplicationController
                           ).includes(:comments, :mentions, :likes, :dislikes)
 
     @posts = PostsFake.new(posts)
+    # cloud add event
+    
     if params[:only_posts]
       render :partial => 'shared/stream', :locals => {:posts => @posts}
     else

@@ -24,6 +24,9 @@
 
     = stylesheet_link_tag "login", :media => 'screen'
 
+    = stylesheet_link_tag "jquery-ui-1.8.13.custom"
+    = stylesheet_link_tag "jquery-ui-timepicker"
+
     = include_stylesheets :default, :media => 'all'
     - if rtl?
       = include_stylesheets :rtl, :media => 'all'
@@ -33,7 +36,20 @@
     <![endif]-->
 
     = include_javascripts :jquery
+    = javascript_include_tag "jquery.ui.core"
+    = javascript_include_tag "jquery.ui.timepicker"
+    = javascript_include_tag "jquery-ui-1.8.custom.min"
+
     :javascript
+      $(document).ready(function(){
+        $(".create_event").click(function(){
+          $("#event_form").show();
+        });
+
+        $('.timepicker').timepicker();
+        $(".datepicker").datepicker({minDate: 0});
+
+      });
       !window.jQuery && document.write(unescape('%3Cscript src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"%3E%3C/script%3E'))
 
     - unless @landing_page

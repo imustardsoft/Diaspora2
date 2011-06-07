@@ -19,7 +19,25 @@
       = current_user.name
       .description
         = link_to current_user.diaspora_handle, person_path(current_user.person)
-
+  - #cloud add event
+  %a.create_event Create an event
+  #event_form{:style=>"display:none;"}
+    = form_for 'event', :url => events_path do |f|
+      %p
+        = f.text_field :from_date
+        = f.text_field :from_time, :class => 'timepicker'
+      %p
+        = f.text_field :to_date
+        = f.text_field :to_time, :class => 'timepicker'
+      %p
+        = f.label :Where?
+        = f.text_field :address
+      %p
+        = f.label :Content
+        = f.text_area :content
+        = f.hidden_field :aspect_ids, :value => @aspect_ids
+      %p
+        = f.submit "Create an event"
   .section
     .title
       = image_tag('/images/icons/bookmark.png')
