@@ -6,5 +6,9 @@ class Event < ActiveRecord::Base
   validates :address, :presence => true
   validates :content, :presence => true
   validates :user_id, :presence => true
-  validates :aspect_ids, :presence => true
+  validates :aspect_id, :presence => true
+
+  def equals_code
+    Digest::SHA1.hexdigest((Time.new.to_i + Kernel::rand(999).to_i).to_s)
+  end
 end

@@ -35,7 +35,7 @@
       %p
         = f.label :Content
         = f.text_area :content
-        = f.hidden_field :aspect_ids, :value => @aspect_ids
+        <input type='hidden' value="#{@aspect_ids.join(',')}" name='aspect_ids'>
       %p
         = f.submit "Create an event"
   #event_listings

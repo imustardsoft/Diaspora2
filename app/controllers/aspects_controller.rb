@@ -24,12 +24,11 @@ class AspectsController < ApplicationController
       @contacts_sharing_with = current_user.contacts.sharing
     end
     # cloud add event
-    
+
     @aspects.each do |aspect|
-      @events ||= [] << Event.where("aspect_ids like '%#{aspect.id}%' or aspect_ids like '%,#{aspect.id}%' or aspect_ids like '%#{aspect.id},%' or aspect_ids like '%,#{aspect.id},%'")
+      @events ||= [] << Event.where("aspect_id = #{aspect.id}")
     end
     @events = @events.flatten!.uniq
-    
 
     #No aspect_listings on infinite scroll
     @aspects = @aspects.includes(:contacts => {:person => :profile}) unless params[:only_posts]
