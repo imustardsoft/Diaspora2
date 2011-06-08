@@ -38,6 +38,18 @@
         = f.hidden_field :aspect_ids, :value => @aspect_ids
       %p
         = f.submit "Create an event"
+  #event_listings
+    - for event in @events
+      %span When?
+      = event.from_date
+      = event.from_time
+      %span To?
+      = event.to_date
+      = event.to_time
+      %span Address:
+      = event.address
+      %span Content:
+      = event.content
   .section
     .title
       = image_tag('/images/icons/bookmark.png')

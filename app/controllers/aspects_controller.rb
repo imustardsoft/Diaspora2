@@ -23,6 +23,13 @@ class AspectsController < ApplicationController
       # end
       @contacts_sharing_with = current_user.contacts.sharing
     end
+    # cloud add event
+    
+    @aspects.each do |aspect|
+      @events ||= [] << Event.where("aspect_ids like '%#{aspect.id}%' or aspect_ids like '%,#{aspect.id}%' or aspect_ids like '%#{aspect.id},%' or aspect_ids like '%,#{aspect.id},%'")
+    end
+    @events = @events.flatten!.uniq
+    
 
     #No aspect_listings on infinite scroll
     @aspects = @aspects.includes(:contacts => {:person => :profile}) unless params[:only_posts]
@@ -44,7 +51,6 @@ class AspectsController < ApplicationController
                           ).includes(:comments, :mentions, :likes, :dislikes)
 
     @posts = PostsFake.new(posts)
-    # cloud add event
     
     if params[:only_posts]
       render :partial => 'shared/stream', :locals => {:posts => @posts}
