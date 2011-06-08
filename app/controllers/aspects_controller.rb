@@ -24,7 +24,6 @@ class AspectsController < ApplicationController
       @contacts_sharing_with = current_user.contacts.sharing
     end
     # cloud add event
-
     @aspects.each do |aspect|
       @events ||= [] << Event.where("aspect_id = #{aspect.id}")
     end
