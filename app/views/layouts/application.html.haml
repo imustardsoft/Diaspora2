@@ -49,6 +49,14 @@
         $('.timepicker').timepicker();
         $(".datepicker").datepicker({minDate: 0});
 
+        $("#submit_keyword").click(function(){
+          if($("#content_keyword").val() == ""){
+            return false;
+          }else{
+            $(this).parents("form").submit();
+          }
+        });
+
       });
       !window.jQuery && document.write(unescape('%3Cscript src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"%3E%3C/script%3E'))
 

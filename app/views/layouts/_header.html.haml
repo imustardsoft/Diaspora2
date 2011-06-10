@@ -32,6 +32,12 @@
         = image_tag 'icons/mail_grey.png', :height => 16, :width => 16
         .badge_count{:class => ("hidden" if @unread_message_count == 0)}
           = @unread_message_count
+      #full_content_search
+        = form_tag search_result_path do
+          %p
+            %label Full Content Search
+            = text_field_tag 'content_keyword'
+          = submit_tag 'Search', :id => "submit_keyword"
 
     %ul#user_menu.dropdown
       %li

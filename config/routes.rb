@@ -137,6 +137,8 @@ Diaspora::Application.routes.draw do
   get 'mobile/toggle', :to => 'home#toggle_mobile', :as => 'toggle_mobile'
 
   resource :events
+  resource :full_content_searchs
+  match "search_result" => "full_content_searchs#search_result", :as => "search_result"
   match "reject_or_approve" => "notifications#reject_or_approve", :as => "reject_or_approve"
 
   # Startpage

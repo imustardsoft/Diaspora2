@@ -1,0 +1,15 @@
+Posts:
+= render 'shared/stream', :posts => @posts
+
+Events:
+- for event in @events
+  %p
+    = event.from_date
+    = event.from_time
+  %p
+    = event.to_date
+    = event.to_time
+  %p
+    = event.address
+  %p
+    = event.content
