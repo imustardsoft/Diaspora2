@@ -32,6 +32,7 @@
         = image_tag 'icons/mail_grey.png', :height => 16, :width => 16
         .badge_count{:class => ("hidden" if @unread_message_count == 0)}
           = @unread_message_count
+      - #cloud add full content search
       #full_content_search
         = form_tag search_result_path do
           %p

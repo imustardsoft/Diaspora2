@@ -10,7 +10,9 @@ class CommentsController < ApplicationController
   respond_to :json, :only => :show
 
   def create
-    target = current_user.find_visible_post_by_id params[:post_id]
+    # cloud modify target post
+    #target = current_user.find_visible_post_by_id params[:post_id]
+    target = Post.find(params[:post_id])
     text = params[:text]
 
     if target
