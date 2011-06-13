@@ -72,6 +72,18 @@ module ApplicationHelper
     if opts[:to] == :photos
       link_to person_image_tag(person, opts[:size]), person_photos_path(person)
     else
+        "<a href='/people/#{person.id}'>
+  #{person_image_tag(person)}
+</a>".html_safe   
+    end
+  end
+
+  def person_image_contacts_link(person, opts={})
+    return "" if person.nil? || person.profile.nil?
+    if opts[:to] == :photos
+      link_to person_image_tag(person, opts[:size]), person_photos_path(person)
+    else
+      # cloud modify photo weather show
       if current_user.id == person.id
         nil
       else
@@ -79,7 +91,7 @@ module ApplicationHelper
   #{person_image_tag(person)}
 </a>".html_safe
       end
-      
+
     end
   end
 

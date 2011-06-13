@@ -123,7 +123,9 @@ class AspectsController < ApplicationController
   end
 
   def edit
-    @aspect = current_user.aspects.where(:id => params[:id]).includes(:contacts => {:person => :profile}).first
+    #cloud modify @aspect
+    #@aspect = current_user.aspects.where(:id => params[:id]).includes(:contacts => {:person => :profile}).first
+    @aspect = Aspect.where(:id => params[:id]).includes(:contacts => {:person => :profile}).first
 
     @contacts_in_aspect = @aspect.contacts.includes(:aspect_memberships, :person => :profile).all.sort! { |x, y| x.person.name <=> y.person.name }
     c = Contact.arel_table

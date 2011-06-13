@@ -9,6 +9,6 @@
   - if contacts.length > 0
     .contacts
       - for contact in contacts[0..15]
-        = person_image_link(contact.person)
+        = person_image_contacts_link(contact.person)
       -# cloud add
-      = person_image_link(aspect.user.person)
+      = person_image_contacts_link(aspect.user.person)
