@@ -128,9 +128,7 @@ class AspectsController < ApplicationController
     @aspect = Aspect.where(:id => params[:id]).includes(:contacts => {:person => :profile}).first
 
     @contacts_in_aspect = @aspect.contacts.includes(:aspect_memberships, :person => :profile).all.sort! { |x, y| x.person.name <=> y.person.name }
-    puts "**********"
-    puts @contacts_in_aspect.inspect
-    puts "******"
+
     c = Contact.arel_table
     if @contacts_in_aspect.empty?
       @contacts_not_in_aspect = current_user.contacts.receiving.includes(:aspect_memberships, :person => :profile).all.sort! { |x, y| x.person.name <=> y.person.name }

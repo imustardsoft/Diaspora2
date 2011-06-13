@@ -51,8 +51,11 @@ class Contact < ActiveRecord::Base
       :contacts_visible => true,
       :contacts => {:person_id => self.user.person.id}).select('aspects.id')
     incoming_aspect_ids = incoming_aspects.map{|a| a.id}
+    # by cloud modify search people contacts
+    #similar_contacts = Person.joins(:contacts => :aspect_memberships).where(
+    #  :aspect_memberships => {:aspect_id => incoming_aspect_ids}).where(people[:id].not_eq(self.user.person.id)).select('DISTINCT people.*')
     similar_contacts = Person.joins(:contacts => :aspect_memberships).where(
-      :aspect_memberships => {:aspect_id => incoming_aspect_ids}).where(people[:id].not_eq(self.user.person.id)).select('DISTINCT people.*')
+     :aspect_memberships => {:aspect_id => incoming_aspect_ids}).select('DISTINCT people.*')
   end
 
   def mutual?
