@@ -128,14 +128,26 @@ class AspectsController < ApplicationController
     @aspect = Aspect.where(:id => params[:id]).includes(:contacts => {:person => :profile}).first
 
     @contacts_in_aspect = @aspect.contacts.includes(:aspect_memberships, :person => :profile).all.sort! { |x, y| x.person.name <=> y.person.name }
+    puts "**********"
+    puts @contacts_in_aspect.inspect
+    puts "******"
     c = Contact.arel_table
     if @contacts_in_aspect.empty?
       @contacts_not_in_aspect = current_user.contacts.receiving.includes(:aspect_memberships, :person => :profile).all.sort! { |x, y| x.person.name <=> y.person.name }
     else
       @contacts_not_in_aspect = current_user.contacts.receiving.where(c[:id].not_in(@contacts_in_aspect.map(&:id))).includes(:aspect_memberships, :person => :profile).all.sort! { |x, y| x.person.name <=> y.person.name }
     end
-
-    @contacts = @contacts_in_aspect + @contacts_not_in_aspect
+    
+    # by cloud add move myself
+    #@contacts = @contacts_in_aspect + @contacts_not_in_aspect
+    @contacts_all = @contacts_in_aspect + @contacts_not_in_aspect
+    @contacts = []
+    @contacts_all.each do |contact|
+      if contact.person_id != current_user.id
+         @contacts << contact
+      end
+    end
+    # end
 
     unless @aspect
       render :file => "#{Rails.root}/public/404.html", :layout => false, :status => 404
