@@ -24,9 +24,11 @@
   #event_form{:style=>"display:none;"}
     = form_for 'event', :url => events_path do |f|
       %p
+        = f.label :when?
         = f.text_field :from_date
         = f.text_field :from_time, :class => 'timepicker'
       %p
+        = f.label :to?
         = f.text_field :to_date
         = f.text_field :to_time, :class => 'timepicker'
       %p
@@ -40,16 +42,20 @@
         = f.submit "Create an event"
   #event_listings
     - for event in @events
-      %span When?
-      = event.from_date
-      = event.from_time
-      %span To?
-      = event.to_date
-      = event.to_time
-      %span Address:
-      = event.address
-      %span Content:
-      = event.content
+      %p
+        %lable When?:
+        = event.from_date
+        = event.from_time
+      %p
+        %lable To?:
+        = event.to_date
+        = event.to_time
+      %p
+        %lable Address:
+        = event.address
+      %p
+        %lable Content:
+        = event.content
   .section
     .title
       = image_tag('/images/icons/bookmark.png')

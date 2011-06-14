@@ -18,7 +18,7 @@ class Notification < ActiveRecord::Base
   def self.notify(recipient, target, actor)
     if target.respond_to? :notification_type
       if note_type = target.notification_type(recipient, actor)
-        if(target.is_a? Comment) || (target.is_a? Like) 
+        if(target.is_a? Comment) || (target.is_a? Like)
           n = note_type.concatenate_or_create(recipient, target.post, actor, note_type)
         else
           n = note_type.make_notification(recipient, target, actor, note_type)
