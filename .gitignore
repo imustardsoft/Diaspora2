@@ -18,7 +18,7 @@ config/database.yml
 
 # Generated files
 log/*
-public/stylesheets/*.css
+#public/stylesheets/*.css
 public/diaspora
 spec/fixtures/*.y*ml
 spec/fixtures/*.fixture.*
