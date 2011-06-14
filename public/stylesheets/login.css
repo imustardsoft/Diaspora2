@@ -1,0 +1,107 @@
+#login {
+  width: 400px;
+  text-align: center;
+  display: inline-block; }
+  #login form input,
+  #login form label {
+    font-size: 14px;
+    display: inline; }
+  #login form label {
+    top: 10px;
+    left: 12px;
+    text-shadow: none; }
+  #login form input[type='text'],
+  #login form input[type='password'] {
+    -webkit-box-shadow: 0 1px 0px white, 0 -1px 0px #888888;
+    -moz-box-shadow: 0 1px 0px white, 0 -1px 0px #888888;
+    box-shadow: 0 1px 0px white, 0 -1px 0px #888888;
+    width: 180px;
+    max-width: 180px; }
+  #login form p {
+    display: inline-block;
+    position: relative;
+    width: 200px; }
+    #login form p span {
+      display: inline-block; }
+    #login form p.submit {
+      width: auto;
+      bottom: 15px; }
+      #login form p.submit input {
+        width: auto;
+        position: relative;
+        height: 40px;
+        top: 0px;
+        color: #666666;
+        margin-bottom: 10px; }
+        #login form p.submit input:hover {
+          color: #444444; }
+  #login form #forgot_password_link {
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+    text-align: left;
+    position: absolute;
+    left: 205px;
+    top: 12px;
+    width: 150px;
+    color: #aaa; }
+    #login form #forgot_password_link.hidden {
+      display: block;
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      -khtml-opacity: 0;
+      opacity: 0; }
+  #login form #controls {
+    -webkit-transition: opacity 0.1s linear;
+    -moz-transition: opacity 0.1s linear;
+    -o-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear; }
+    #login form #controls.hidden {
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      -khtml-opacity: 0;
+      opacity: 0; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+.rideSpinners {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite; }
+
+/* by anny add css*/
+#full_content_search{
+    position: absolute;
+    top:5px;
+    left:500px;
+    margin-left:10px;
+}
+#full_content_search input[type="text"]{
+  width:200px;
+  padding:3px;
+  margin: 0;
+  height:14px;
+}
+#full_content_search p{
+  float:left;
+}
+#full_content_search input[class="button"]{
+  margin-left:5px;
+  display: inline;
+  vertical-align: middle;
+}
+#event_form textarea[id="event_content"]{
+  height:150px;
+}
+#event_listings{
+  padding:5px 0 10px 0;
+}
+#event_listings p{
+  margin:0 0 5px 0;
+}
