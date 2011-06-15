@@ -24,12 +24,16 @@
   #event_form{:style=>"display:none;"}
     = form_for 'event', :url => events_path do |f|
       %p
-        = f.label :when?
+        = f.label :When?
         = f.text_field :from_date
+      %p
+        = f.label "When Time?"
         = f.text_field :from_time, :class => 'timepicker'
       %p
-        = f.label :to?
+        = f.label :To?
         = f.text_field :to_date
+      %p
+        = f.label "To Time?"
         = f.text_field :to_time, :class => 'timepicker'
       %p
         = f.label :Where?
@@ -41,6 +45,7 @@
       %p
         = f.submit "Create an event"
   #event_listings
+    Event:
     - for event in @events
       %p
         %lable When?:
