@@ -1,0 +1,16 @@
+Event:
+- for event in @events
+  %p
+    %lable When?:
+    = event.from_date
+    = event.from_time
+  %p
+    %lable To?:
+    = event.to_date
+    = event.to_time
+  %p
+    %lable Address:
+    = event.address
+  %p
+    %lable Content:
+    = event.content

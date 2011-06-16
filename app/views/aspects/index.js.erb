@@ -1,3 +1,5 @@
 $('#aspect_stream_container').html("<%= escape_javascript(render('aspects/aspect_stream', :aspect => @aspect, :aspect_ids => @aspect_ids, :posts => @posts)) %>");
 $('#aspect_listings').html("<%= escape_javascript(render('aspects/aspect_listings', :aspects => @aspects)) %>");
 $('a[rel*=facebox]').facebox();
+$("#event_listings").html("<%= escape_javascript(render('aspects/event', :locals => {:@events => @events})) %>");
+$("#event_aspect_ids").val("<%= @aspect_ids.join(",") %>");

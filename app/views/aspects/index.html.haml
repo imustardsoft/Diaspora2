@@ -41,26 +41,12 @@
       %p
         = f.label :Content
         = f.text_area :content
-        <input type='hidden' value="#{@aspect_ids.join(',')}" name='aspect_ids'>
+        <input type='hidden' value="#{@aspect_ids.join(',')}" name='aspect_ids' id='event_aspect_ids'>
       %p
         = f.submit "Create an event"
   #event_listings
-    Event:
-    - for event in @events
-      %p
-        %lable When?:
-        = event.from_date
-        = event.from_time
-      %p
-        %lable To?:
-        = event.to_date
-        = event.to_time
-      %p
-        %lable Address:
-        = event.address
-      %p
-        %lable Content:
-        = event.content
+    = render :partial => 'event', :locals => {:@events => @events}
+    
   .section
     .title
       = image_tag('/images/icons/bookmark.png')

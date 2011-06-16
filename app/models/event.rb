@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :aspect_id, :presence => true
 
-  def equals_code
+  def self.equals_code
     Digest::SHA1.hexdigest((Time.new.to_i + Kernel::rand(999).to_i).to_s)
   end
 end
