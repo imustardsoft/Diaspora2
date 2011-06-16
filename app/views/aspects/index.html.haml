@@ -25,13 +25,13 @@
     = form_for 'event', :url => events_path do |f|
       %p
         = f.label :When?
-        = f.text_field :from_date
+        = f.text_field :from_date, :class => 'datepicker'
       %p
         = f.label "When Time?"
         = f.text_field :from_time, :class => 'timepicker'
       %p
         = f.label :To?
-        = f.text_field :to_date
+        = f.text_field :to_date, :class => 'datepicker'
       %p
         = f.label "To Time?"
         = f.text_field :to_time, :class => 'timepicker'

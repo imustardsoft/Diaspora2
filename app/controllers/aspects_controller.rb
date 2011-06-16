@@ -52,9 +52,6 @@ class AspectsController < ApplicationController
     
     if params[:only_posts]
       render :partial => 'shared/stream', :locals => {:posts => @posts}
-#      respond_to do |format|
-#        format.js
-#      end
     else
       @contact_count = current_user.contacts.count
 
