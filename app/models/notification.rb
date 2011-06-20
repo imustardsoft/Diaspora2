@@ -45,7 +45,7 @@ private
                               :target_type => target.class.base_class,
                                :recipient_id => recipient.id,
                                :unread => true).first
-      n.actors = n.actors | [actor]
+      #n.actors = n.actors | [actor]
 
       n.unread = true
       n.save!

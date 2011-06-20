@@ -12,7 +12,7 @@ module Job
       users = User.where(:id => user_ids)
       object = object_klass.constantize.find_by_id(object_id)
       person = Person.find_by_id(person_id)
-
+      
       users.each{|user| Notification.notify(user, object, person) }
     end
   end
