@@ -24,10 +24,15 @@ class AspectsController < ApplicationController
       @contacts_sharing_with = current_user.contacts.sharing
     end
     # cloud add event
+    #@aspects.each do |aspect|
+     # @events ||= [] << Event.where("aspect_id = #{aspect.id}")
+    #end
+    #@events = @events.flatten!.uniq
+    aspect_ids = []
     @aspects.each do |aspect|
-      @events ||= [] << Event.where("aspect_id = #{aspect.id}")
+      aspect_ids << aspect.id
     end
-    @events = @events.flatten!.uniq
+    @events = Event.where(:aspect_id => aspect_ids).paginate(:per_page => 1, :page => params[:page] ||= 1).uniq
 
     #No aspect_listings on infinite scroll
     @aspects = @aspects.includes(:contacts => {:person => :profile}) unless params[:only_posts]
@@ -42,10 +47,14 @@ class AspectsController < ApplicationController
     @selected_contacts = @aspects.map { |aspect| aspect.contacts }.flatten.uniq unless params[:only_posts]
 
     @aspect_ids = @aspects.map { |a| a.id }
+#    posts = current_user.visible_posts(:by_members_of => @aspect_ids,
+#                                           :type => ['StatusMessage','ActivityStreams::Photo'],
+#                                           :order => session[:sort_order] + ' DESC',
+#                                           :max_time => params[:max_time].to_i
+#                          ).includes(:comments, :mentions, :likes, :dislikes)
     posts = current_user.visible_posts(:by_members_of => @aspect_ids,
                                            :type => ['StatusMessage','ActivityStreams::Photo'],
-                                           :order => session[:sort_order] + ' DESC',
-                                           :max_time => params[:max_time].to_i
+                                           :order => session[:sort_order] + ' DESC'
                           ).includes(:comments, :mentions, :likes, :dislikes)
 
     @posts = PostsFake.new(posts)

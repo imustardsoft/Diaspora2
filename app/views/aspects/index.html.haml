@@ -46,6 +46,7 @@
         = f.submit "Create an event"
   #event_listings
     = render :partial => 'event', :locals => {:@events => @events}
+    = will_paginate @events
     
   .section
     .title
