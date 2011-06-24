@@ -32,7 +32,7 @@ class AspectsController < ApplicationController
     @aspects.each do |aspect|
       aspect_ids << aspect.id
     end
-    @events = Event.where(:aspect_id => aspect_ids).paginate(:per_page => 1, :page => params[:page] ||= 1).uniq
+    @events = Event.where(:aspect_id => aspect_ids).order("created_at desc").paginate(:per_page => 5, :page => params[:page] ||= 1).uniq
 
     #No aspect_listings on infinite scroll
     @aspects = @aspects.includes(:contacts => {:person => :profile}) unless params[:only_posts]
