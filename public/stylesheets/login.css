@@ -105,3 +105,9 @@
 #event_listings p{
   margin:0 0 5px 0;
 }
+
+#event_form p { position: relative; margin: 0 0 5px 0;}
+#event_form p label { position: absolute; top: 6px; left: 4px;}
+
+#full_content_search p { position: relative; margin: 0 0 5px 0;}
+#full_content_search p label { position: absolute; top: 2px; left: 4px;}

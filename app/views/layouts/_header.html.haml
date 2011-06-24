@@ -36,7 +36,7 @@
       #full_content_search
         = form_tag search_result_path do
           %p
-            %label Full Content Search
+            <label for="content_keyword">Full Content Search</label>
             = text_field_tag 'content_keyword'
           = submit_tag 'Search', :id => "submit_keyword"
 

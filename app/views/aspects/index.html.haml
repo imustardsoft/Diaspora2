@@ -24,22 +24,22 @@
   #event_form{:style=>"display:none;"}
     = form_for 'event', :url => events_path do |f|
       %p
-        = f.label :When?
+        = f.label :When?, :for => "event_from_date"
         = f.text_field :from_date, :class => 'datepicker'
       %p
-        = f.label "When Time?"
+        = f.label "When Time?", :for => "event_from_time"
         = f.text_field :from_time, :class => 'timepicker'
       %p
-        = f.label :To?
+        = f.label :To?, :for => "event_to_date"
         = f.text_field :to_date, :class => 'datepicker'
       %p
-        = f.label "To Time?"
+        = f.label "To Time?", :for => "event_to_time"
         = f.text_field :to_time, :class => 'timepicker'
       %p
-        = f.label :Where?
+        = f.label :Where?, :for => "event_address"
         = f.text_field :address
       %p
-        = f.label :Content
+        = f.label :Content, :for => "event_content"
         = f.text_area :content
         <input type='hidden' value="#{@aspect_ids.join(',')}" name='aspect_ids' id='event_aspect_ids'>
       %p

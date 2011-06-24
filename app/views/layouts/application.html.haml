@@ -39,9 +39,12 @@
     = javascript_include_tag "jquery-ui-1.8.custom.min"
     = javascript_include_tag "jquery.ui.core"
     = javascript_include_tag "jquery.ui.timepicker"
+    = javascript_include_tag "jquery.infieldlabel.min"
 
     :javascript
       $(document).ready(function(){
+        $("label").inFieldLabels();
+
         $(".create_event").click(function(){
           $("#event_form").show();
         });

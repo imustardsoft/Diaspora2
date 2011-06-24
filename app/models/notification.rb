@@ -45,6 +45,7 @@ private
                               :target_type => target.class.base_class,
                                :recipient_id => recipient.id,
                                :unread => true).first
+      # cloud modify comment the following line
       #n.actors = n.actors | [actor]
 
       n.unread = true
